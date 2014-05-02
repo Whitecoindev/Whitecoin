@@ -42,7 +42,7 @@ static CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 20);
 static CBigNum bnProofOfStakeLimitTestNet(~uint256(0) >> 20);
 
 unsigned int nStakeMinAge = 60 * 60 * 24 * 2;	// minimum age for coin age: 2d
-unsigned int nStakeMaxAge = 60 * 60 * 24 * 28;	// stake age of full weight: -1
+unsigned int nStakeMaxAge = 60 * 60 * 24 * 100;	// stake age of full weight: -1
 unsigned int nStakeTargetSpacing = 90;			// 90 sec block spacing
 
 int64 nChainStartTime = 1397400948;
@@ -963,13 +963,13 @@ int64 GetProofOfWorkReward(int nHeight, int64 nFees, uint256 prevHash)
 	{
 		nSubsidy = 30000 * COIN;
 	}
-	else if(nHeight < 15510)
+	else if(nHeight < 17500)
 	{
 		return nMinSubsidy + nFees;
 	}
-	else if(nHeight < 36000)
+	else if(nHeight < 17700)
 	{
-		nSubsidy = 30000 * COIN;
+		nSubsidy = 100 * COIN;
 	}
 
 
